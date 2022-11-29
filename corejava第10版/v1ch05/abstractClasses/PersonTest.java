@@ -1,5 +1,8 @@
 package abstractClasses;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 /**
  * This program demonstrates abstract classes.
  * @version 1.01 2004-02-21
@@ -16,7 +19,15 @@ public class PersonTest
       people[1] = new Student("Maria Morris", "computer science");
 
       // print out names and descriptions of all Person objects
-      for (Person p : people)
+      for (Person p : people) {
+
          System.out.println(p.getName() + ", " + p.getDescription());
+         System.out.println("The Current Class is: " + p);
+      }
+
+      int[] ints = new int[8];
+      System.out.println(ints.length);
+
+      ArrayList<Integer> integers = new ArrayList<>(8);
    }
 }

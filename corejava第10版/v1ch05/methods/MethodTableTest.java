@@ -14,6 +14,8 @@ public class MethodTableTest
       // get method pointers to the square and sqrt methods
       Method square = MethodTableTest.class.getMethod("square", double.class);
       Method sqrt = Math.class.getMethod("sqrt", double.class);
+      Method square1 = MethodTableTest.class.getMethod("square", int.class);
+
 
       // print tables of x- and y-values
 
@@ -31,6 +33,10 @@ public class MethodTableTest
       return x * x;
    }
 
+   public static int square(int x)
+   {
+      return x * x;
+   }
    /**
     * Prints a table with x- and y-values for a method
     * @param from the lower bound for the x-values
@@ -49,6 +55,7 @@ public class MethodTableTest
       {
          try
          {
+            //通过反射可以调用任意方法，静态方法第一个参数可以忽略
             double y = (Double) f.invoke(null, x);
             System.out.printf("%10.4f | %10.4f%n", x, y);
          }

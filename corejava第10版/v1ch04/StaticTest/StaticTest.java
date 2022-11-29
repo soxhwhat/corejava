@@ -24,7 +24,7 @@ public class StaticTest
 
       int n = Employee.getNextId(); // calls static method
       System.out.println("Next available id=" + n);
-   }
+   }#
 }
 
 class Employee

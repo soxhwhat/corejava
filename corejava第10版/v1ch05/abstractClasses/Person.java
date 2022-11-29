@@ -14,4 +14,10 @@ public abstract class Person
    {
       return name;
    }
+
+   @Override
+   public String toString() {
+      return super.toString()
+              + ", name=" + name;
+   }
 }

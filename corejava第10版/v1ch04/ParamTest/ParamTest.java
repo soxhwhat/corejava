@@ -60,7 +60,7 @@ public class ParamTest
    }
 }
 
-class Employee // simplified Employee class
+class Employee implements Cloneable // simplified Employee class
 {
    private String name;
    private double salary;
