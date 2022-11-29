@@ -25,6 +25,7 @@ public class CopyOfTest
    }
 
    /**
+    * 使用反射编写泛型数组代码
     * This method attempts to grow an array by allocating a new array and copying all elements.
     * @param a the array to grow
     * @param newLength the new length
@@ -47,6 +48,7 @@ public class CopyOfTest
     */
    public static Object goodCopyOf(Object a, int newLength) 
    {
+      // CopyOf方法可以用来扩展任意类型的数组，而不仅是对象数组
       Class cl = a.getClass();
       if (!cl.isArray()) return null;
       Class componentType = cl.getComponentType();
