@@ -1,6 +1,8 @@
 package interfaces;
 
-public class Employee implements Comparable<Employee>
+import java.util.Comparator;
+
+public class Employee implements Comparable<Employee>, Comparator<String>
 {
    private String name;
    private double salary;
@@ -36,5 +38,10 @@ public class Employee implements Comparable<Employee>
    public int compareTo(Employee other)
    {
       return Double.compare(salary, other.salary);
+   }
+
+   @Override
+   public int compare(String o1, String o2) {
+      return o1.length() - o2.length();
    }
 }

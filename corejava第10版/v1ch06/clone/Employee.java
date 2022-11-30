@@ -16,12 +16,11 @@ public class Employee implements Cloneable
       hireDay = new Date();
    }
 
-   public Employee clone() throws CloneNotSupportedException
-   {
+   public Employee clone() throws CloneNotSupportedException {
       // call Object.clone()
       Employee cloned = (Employee) super.clone();
 
-      // clone mutable fields
+      // clone mutable fields,可变对象需要单独处理
       cloned.hireDay = (Date) hireDay.clone();
 
       return cloned;
