@@ -21,9 +21,24 @@ public class LambdaTest
       Arrays.sort(planets);
       System.out.println(Arrays.toString(planets));
       System.out.println("Sorted by length:");
+      /**
+       *       Arrays.sort(staff, new Comparator<Employee>() {
+       *                  @Override
+       *                  public int compare(Employee o1, Employee o2) {
+       *                     return o1.getName().compareTo(o2.getName());
+       *                  }
+       *       });
+       */
       Arrays.sort(planets, (first, second) -> first.length() - second.length());
       System.out.println(Arrays.toString(planets));
-            
+      /**
+       *       Timer timer = new Timer(100000, new ActionListener() {
+       *          @Override
+       *          public void actionPerformed(ActionEvent e) {
+       *             System.out.println("The time is " + new Date());
+       *          }
+       *       });
+        */
       Timer t = new Timer(1000, event ->
          System.out.println("The time is " + new Date()));
       t.start();   

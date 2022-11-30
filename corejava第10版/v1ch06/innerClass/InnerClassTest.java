@@ -58,6 +58,7 @@ class TalkingClock
       public void actionPerformed(ActionEvent event)
       {
          System.out.println("At the tone, the time is " + new Date());
+         //TimePrinter类没有实例域或者名为beep的变量，取而代之的是beep引用了创建TimePrinter的TalkingClock对象的域
          if (beep) Toolkit.getDefaultToolkit().beep();
       }
    }

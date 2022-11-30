@@ -21,6 +21,13 @@ public class TimerTest
       // construct a timer that calls the listener
       // once every 10 seconds
       Timer t = new Timer(10000, listener);
+
+//      Timer timer = new Timer(100000, new ActionListener() {
+//         @Override
+//         public void actionPerformed(ActionEvent e) {
+//            System.out.println("The time is " + new Date());
+//         }
+//      });
       t.start();
 
       JOptionPane.showMessageDialog(null, "Quit program?");
