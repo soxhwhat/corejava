@@ -47,4 +47,18 @@ class TalkingClock
       Timer t = new Timer(interval, listener);
       t.start();
    }
+//
+//   public void start(int interval, boolean beep) {
+//      //局部内部类
+//      class TimePrinter implements ActionListener {
+//         public void actionPerformed(ActionEvent event) {
+//            System.out.println("At the tone, the time is " + new Date());
+//            //TimePrinter类没有实例域或者名为beep的变量，取而代之的是beep引用了创建TimePrinter的TalkingClock对象的域
+//            if (beep) Toolkit.getDefaultToolkit().beep();
+//         }
+//      }
+//      ActionListener listener = new TimePrinter();
+//      Timer t = new Timer(interval, listener);
+//      t.start();
+//   }
 }

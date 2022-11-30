@@ -63,6 +63,8 @@ class ArrayAlg
     * @param values an array of floating-point numbers
     * @return a pair whose first element is the minimum and whose second element
     * is the maximum
+    *
+    * 有时候，使用内部类只是为了把一个类隐藏在另外一个类的内部，并不需要内部类引用外围类对象。为此，可以将内部类声明为static，以便取消产生的引用。
     */
    public static Pair minmax(double[] values)
    {
