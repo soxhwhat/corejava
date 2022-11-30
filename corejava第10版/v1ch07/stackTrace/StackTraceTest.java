@@ -19,6 +19,12 @@ public class StackTraceTest
       System.out.println("factorial(" + n + "):");
       Throwable t = new Throwable();
       StackTraceElement[] frames = t.getStackTrace();
+      Map<Thread, StackTraceElement[]> traces = Thread.getAllStackTraces();
+      for (Thread thread : traces.keySet()) {
+            for (StackTraceElement frame : traces.get(thread)) {
+                System.out.println(frame);
+            }
+      }
       for (StackTraceElement f : frames)
          System.out.println(f);
       int r;
