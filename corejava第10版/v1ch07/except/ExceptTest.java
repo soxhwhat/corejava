@@ -13,6 +13,10 @@ import javax.swing.*;
  */
 public class ExceptTest
 {
+   /**
+    * 带有面板的框架，用于测试各种异常
+    * @param args
+    */
    public static void main(String[] args)
    {
       EventQueue.invokeLater(() ->
