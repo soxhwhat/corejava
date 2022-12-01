@@ -8,6 +8,10 @@ import java.util.*;
  */
 public class ExceptionalTest
 {
+   /**
+    * 捕获异常所花费的时间大大超过了正常处理的时间
+    * @param args
+    */
    public static void main(String[] args)
    {
       int i = 0;
