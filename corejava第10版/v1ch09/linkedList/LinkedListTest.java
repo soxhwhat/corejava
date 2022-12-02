@@ -43,6 +43,7 @@ public class LinkedListTest
          bIter.next(); // skip one element
          if (bIter.hasNext())
          {
+//            应该将Java迭代器认为是位于两个元素之间。当调用next时，迭代器就越过下一个元素，并返回刚刚越过的那个元素的引用。
             bIter.next(); // skip next element
             bIter.remove(); // remove that element
          }

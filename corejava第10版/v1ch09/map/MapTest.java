@@ -34,7 +34,7 @@ public class MapTest
       System.out.println(staff.get("157-62-7935"));
 
       // iterate through all entries
-
+      // map遍历操作
       staff.forEach((k, v) -> 
          System.out.println("key=" + k + ", value=" + v));
    }

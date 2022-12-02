@@ -14,15 +14,15 @@ public class GenericAlgorithms
    {
       Pair<String> p = Pair.makePair(String::new);
       System.out.println(p);
-      
+
       p = Pair.makePair(String.class);
       System.out.println(p);      
       
       String[] ss = ArrayAlg.minmax("Tom", "Dick", "Harry");
       System.out.println(Arrays.toString(ss));
       
-      ss = ArrayAlg.minmax(String[]::new, "Tom", "Dick", "Harry");
-      System.out.println(Arrays.toString(ss));      
+//      ss = ArrayAlg.minmax(String[]::new, "Tom", "Dick", "Harry");
+//      System.out.println(Arrays.toString(ss));
    }
 }
 
@@ -40,7 +40,7 @@ class ArrayAlg
       }
       return mm;
    }
-   
+
    public static <T extends Comparable> T[] minmax(T... a)
    {
       T[] mm = (T[]) Array.newInstance(a.getClass().getComponentType(), 2);
@@ -52,6 +52,6 @@ class ArrayAlg
          if (max.compareTo(a[i]) < 0) max = a[i];
       }
       return (T[]) mm; // compiles with warning
-   }      
+   }
 }
 
