@@ -23,7 +23,9 @@ public class RandomAccessTest
          for (Employee e : staff)
             writeData(out, e);
       }
-         
+      /**
+       * 为了高效执行，需要使用随机访问
+       */
       try (RandomAccessFile in = new RandomAccessFile("employee.dat", "r"))
       {
          // retrieve all records into a new array

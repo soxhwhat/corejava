@@ -6,6 +6,7 @@ import java.util.*;
 /**
  * @version 1.13 2012-05-30
  * @author Cay Horstmann
+ * 文本输入输出
  */
 public class TextFileTest
 {
@@ -18,12 +19,14 @@ public class TextFileTest
       staff[2] = new Employee("Tony Tester", 40000, 1990, 3, 15);
 
       // save all employee records to the file employee.dat
+      // PrintWriter用来写入文本文件
       try (PrintWriter out = new PrintWriter("employee.dat", "UTF-8"))
       {         
          writeData(staff, out);
       }
       
       // retrieve all records into a new array
+      // Scanner用来读取文件
       try (Scanner in = new Scanner(
             new FileInputStream("employee.dat"), "UTF-8"))
       {
@@ -43,6 +46,7 @@ public class TextFileTest
    private static void writeData(Employee[] employees, PrintWriter out) throws IOException
    {
       // write number of employees
+      // 写入员工数量
       out.println(employees.length);
 
       for (Employee e : employees)
@@ -86,6 +90,10 @@ public class TextFileTest
     */
    public static Employee readEmployee(Scanner in)
    {
+      /**
+       * 读取一行数据
+       * println方法在行中添加了对目标系统来说恰当的行结束符（Windows系统是"\r\n"，UNIX系统是"\n"），也就是通过调用System.getProperty（"line.separator"）而获得的字符串。
+       */
       String line = in.nextLine();
       String[] tokens = line.split("\\|");
       String name = tokens[0];

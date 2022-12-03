@@ -4,6 +4,13 @@ import java.io.*;
 
 public class DataIO
 {
+   /**
+    * 读取二进制字符串数据
+    * @param size
+    * @param in
+    * @return
+    * @throws IOException
+    */
    public static String readFixedString(int size, DataInput in) 
       throws IOException
    {  
@@ -21,6 +28,13 @@ public class DataIO
       return b.toString();
    }
 
+   /**
+    * 写入二进制字符串数据
+    * @param s
+    * @param size
+    * @param out
+    * @throws IOException
+    */
    public static void writeFixedString(String s, int size, DataOutput out) 
       throws IOException
    {
