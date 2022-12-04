@@ -59,15 +59,28 @@ public class MemoryMapTest
 
    public static long checksumMappedFile(Path filename) throws IOException
    {
+      /**
+       * 内存映射文件
+       */
       try (FileChannel channel = FileChannel.open(filename))
       {
          CRC32 crc = new CRC32();
          int length = (int) channel.size();
          MappedByteBuffer buffer = channel.map(FileChannel.MapMode.READ_ONLY, 0, length);
-   
+         /**
+          * 随机访问
+          */
          for (int p = 0; p < length; p++)
          {
             int c = buffer.get(p);
+            crc.update(c);
+         }
+         /**
+          * 顺序访问
+          */
+         while (buffer.hasRemaining())
+         {
+            int c = buffer.get();
             crc.update(c);
          }
          return crc.getValue();

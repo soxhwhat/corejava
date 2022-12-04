@@ -21,6 +21,9 @@ public class RandomAccessTest
       staff[2] = new Employee("Tony Tester", 40000, 1990, 3, 15);
 
       Path path = Paths.get("employee.dat");
+      /**
+       * 用来自某个通道的数据填充缓冲区，或者将缓冲的内容写出通道
+       */
       ByteBuffer buffer = ByteBuffer.allocate(Employee.RECORD_SIZE);         
       
       try (FileChannel channel = FileChannel.open(path, 

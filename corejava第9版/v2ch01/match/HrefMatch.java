@@ -18,9 +18,7 @@ public class HrefMatch
       try
       {
          // get URL string from command line or use default
-         String urlString;
-         if (args.length > 0) urlString = args[0];
-         else urlString = "http://java.sun.com";
+         String urlString = "http://www.baidu.com";
 
          // open reader for URL
          InputStreamReader in = new InputStreamReader(new URL(urlString).openStream());
