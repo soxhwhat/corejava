@@ -20,7 +20,10 @@ public class ThreadedEchoServer
          ServerSocket s = new ServerSocket(8189);
 
          while (true)
-         {  
+         {
+            /**
+             * 每当程序建立一个新的套接字连接，也就是说当调用accept时，将启动一个新的线程来处理服务器和该客户端之间的连接，而主程序将立即返回并等待下一个连接。
+             */
             Socket incoming = s.accept();
             System.out.println("Spawning " + i);
             Runnable r = new ThreadedEchoHandler(incoming);
@@ -33,6 +36,23 @@ public class ThreadedEchoServer
       {  
          e.printStackTrace();
       }
+   }
+
+   /**
+    * 每当程序建立一个新的套接字连接，也就是说当调用accept时，将启动一个新的线程来处理服务器和该客户端之间的连接，而主程序将立即返回并等待下一个连接。
+    */
+   public void testHalfClose() throws IOException {
+      Socket localhost = new Socket("localhost", 8189);
+      Scanner in = new Scanner(localhost.getInputStream());
+      PrintWriter writer = new PrintWriter(localhost.getOutputStream());
+      writer.println("Hello");
+      writer.flush();
+      // 半关闭状态
+      localhost.shutdownInput();
+      while (in.hasNextLine()) {
+         System.out.println(in.nextLine());
+      }
+      localhost.close();
    }
 }
 
