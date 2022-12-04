@@ -12,12 +12,16 @@ public class ActionListenerInstaller
    /**
     * Processes all ActionListenerFor annotations in the given object.
     * @param obj an object whose methods may have ActionListenerFor annotations
+    * 注解事件处理器
     */
    public static void processAnnotations(Object obj)
    {
       try
       {
          Class<?> cl = obj.getClass();
+         /**
+          * 静态的processAnnotations方法可以枚举出某个对象接收到的所有方法。对于每一个方法，它先获取ActionListenerFor注解对象，然后再对它进行处理。
+          */
          for (Method m : cl.getDeclaredMethods())
          {
             ActionListenerFor a = m.getAnnotation(ActionListenerFor.class);

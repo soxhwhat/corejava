@@ -25,6 +25,9 @@ public class BeanInfoAnnotationProcessor extends AbstractProcessor
       {
          Map<String, Property> props = new LinkedHashMap<>();
          String beanClassName = null;
+         /**
+          * 在process方法中，我们迭代所有注解过的方法。对于每个方法，我们剥离其名字中的get、set和is前缀，并将随后紧挨着的字母改为小写，从而得到属性名。
+          */
          for (Element e : roundEnv.getElementsAnnotatedWith(t))
          {
             String mname = e.getSimpleName().toString();
