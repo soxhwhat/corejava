@@ -17,10 +17,10 @@ public class WarehouseClient
       Enumeration<NameClassPair> e = namingContext.list("rmi://localhost/");
       while (e.hasMoreElements())
          System.out.println(e.nextElement().getName());
-      
+      //查找远程对象
       String url = "rmi://localhost/central_warehouse";      
       Warehouse centralWarehouse = (Warehouse) namingContext.lookup(url);      
-      
+      //调用远程方法
       String descr = "Blackwell Toaster";
       double price = centralWarehouse.getPrice(descr);
       System.out.println(descr + ": " + price);
