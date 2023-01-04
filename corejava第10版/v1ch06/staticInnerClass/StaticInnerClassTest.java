@@ -12,6 +12,7 @@ public class StaticInnerClassTest
       double[] d = new double[20];
       for (int i = 0; i < d.length; i++)
          d[i] = 100 * Math.random();
+      //仅需要遍历一次，可以获得最大值和最小值
       ArrayAlg.Pair p = ArrayAlg.minmax(d);
       System.out.println("min = " + p.getFirst());
       System.out.println("max = " + p.getSecond());
@@ -22,6 +23,7 @@ class ArrayAlg
 {
    /**
     * A pair of floating-point numbers
+    * 使用内部类只是为了把类隐藏在另一个类的内部，而不是为了访问外部类的数据。为此，可以使用静态内部类。以便取消隐式引用。
     */
    public static class Pair
    {
@@ -32,6 +34,8 @@ class ArrayAlg
        * Constructs a pair from two floating-point numbers
        * @param f the first number
        * @param s the second number
+       *
+       * Pair是一个非常大众化的名词，为了避免命名冲突，解决这个问题的方法就是将Pair定义为ArrayAlg的静态内部类，通过ArrayAlg.Pair来访问
        */
       public Pair(double f, double s)
       {

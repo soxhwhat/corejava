@@ -33,6 +33,9 @@ class TalkingClock
     * Starts the clock.
     * @param interval the interval between messages (in milliseconds)
     * @param beep true if the clock should beep
+    *
+    * 局部内部类的使用再深入一步，只创建这个类的一个对象，不必命名，称为匿名内部类。
+    * 创建一个实现了ActionListener接口的匿名内部类对象。
     */
    public void start(int interval, boolean beep)
    {
@@ -61,4 +64,10 @@ class TalkingClock
 //      Timer t = new Timer(interval, listener);
 //      t.start();
 //   }
+   /**
+    * 双括号初始化
+    *  构造一个数组列表，并把它传递到以一个方法。
+    *  如果不再需要这个数组列表，让它作为一个数组列表。
+    */
+   // invite(new ArrayList<String> () {{add("TOM"); add("TONY");}});
 }
